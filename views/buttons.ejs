@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Subject</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+        <div class="btns">
+           
+            <button  onclick="sendPostRequest('ss')" class="form--submit home">SS</button>
+            <button  onclick="sendPostRequest('mpmc')" class="form--submit home">MPMC</button>
+            <button  onclick="sendPostRequest('mss')" class="form--submit home">MSS</button>
+            <button  onclick="sendPostRequest('cn')" class="form--submit home">CN</button>
+            <button  onclick="sendPostRequest('flat')" class="form--submit home">FLAT</button>
+            <button  onclick="sendPostRequest('dm')" class="form--submit home">DM</button>
+        </div>
+    
+</body>
+<script>
+function sendPostRequest(value) {
+    const url = '/weak'; // Replace with your server endpoint
+
+    const formData = new URLSearchParams(); // Create URLSearchParams object
+
+    // Append the selected value as form data
+    formData.append('selectedValue', value);
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded', // Set Content-Type to URL encoded
+        },
+        body: formData.toString(), // Convert URLSearchParams to string
+    })
+    .then(response => {
+        // Handle response if needed
+        console.log('Response:', response);
+        window.location.href = '/weak';
+    })
+    .catch(error => {
+        // Handle error if request fails
+        console.error('Error:', error);
+    });
+}
+</script>
+</html>

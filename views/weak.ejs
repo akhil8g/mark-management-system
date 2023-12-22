@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weak Students</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <a class="form--submit home " href="/" >Home</a>
+    <table>
+        <thead>
+        <tr class="table-headers">
+        <th class="rollno">ROLL NO.</th>
+        <th class="name" >NAME</th>
+        <th class="ss">SS</th>
+        <th class="ss">MPMC</th>
+        <th class="ss">MSS</th>
+        <th class="ss">FLAT</th>
+        <th class="ss">CN</th>
+        <th class="ss">DM</th>
+        </tr>
+        </thead>
+        <tbody>
+            <% student2.forEach(student => { %>
+                <tr>
+                    <td><%= student.rollno %></td>
+                    <td><%= student.name %></td>
+                    <td><%= student.ss %></td>
+                    <td><%= student.mpmc %></td>
+                    <td><%= student.mss %></td>
+                    <td><%= student.flat %></td>
+                    <td><%= student.cn %></td>
+                    <td><%= student.dm %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
